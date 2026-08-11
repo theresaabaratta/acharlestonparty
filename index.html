@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Charleston Party | Party Planning &amp; Design, Charleston SC</title>
+<meta name="description" content="A Charleston Party plans and styles birthdays, showers, engagements, and celebrations across Charleston, SC — decor concepts, vendor coordination, and day-of styling.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Work+Sans:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1B2B22;
+    --cream:#F3EDE4;
+    --paper:#FBF8F3;
+    --brass:#B08D3E;
+    --rose:#C98A93;
+    --plum:#4B1E3D;
+    --line: rgba(27,43,34,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.display-font{
+    font-family:'Fraunces', serif;
+    font-weight:450;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+
+  .hand{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+  }
+
+  .eyebrow{
+    font-family:'Work Sans', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.16em;
+    font-size:0.72rem;
+    font-weight:600;
+    color:var(--brass);
+  }
+
+  a{color:inherit;}
+
+  /* ---------- NAV ---------- */
+  .nav-wrap{
+    background:rgba(243,237,228,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand-mark{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--plum);
+    display:inline-flex;align-items:center;justify-content:center;
+    color:var(--cream);font-family:'Fraunces',serif;font-size:1rem;
+    flex-shrink:0;
+  }
+  .navbar-brand{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    letter-spacing:-0.01em;
+    color:var(--ink) !important;
+    display:flex;align-items:center;gap:0.6rem;
+  }
+  .nav-link{
+    font-size:0.9rem;
+    color:var(--ink) !important;
+    opacity:0.75;
+    padding:0.4rem 0.9rem !important;
+  }
+  .nav-link:hover{opacity:1;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:6.5rem 0 5rem;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 85% -10%, rgba(176,141,62,0.16), transparent 55%),
+      radial-gradient(ellipse at -5% 110%, rgba(75,30,61,0.10), transparent 50%);
+  }
+  .invite-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:2.75rem 2.25rem;
+    position:relative;
+    box-shadow:0 30px 60px -30px rgba(27,43,34,0.35);
+    transform:rotate(-0.6deg);
+  }
+  .invite-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;height:0;
+    border-left:26vw solid transparent;
+    border-right:26vw solid transparent;
+    border-top:70px solid var(--plum);
+    opacity:0.9;
+    max-width:100%;
+  }
+  .seal{
+    position:absolute;
+    top:18px; left:50%;
+    transform:translateX(-50%);
+    width:46px;height:46px;border-radius:50%;
+    background:var(--brass);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--paper);font-family:'Fraunces',serif;font-size:1.2rem;
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
+    z-index:2;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4.2vw, 3.5rem);
+    line-height:1.06;
+    margin-top:2.5rem;
+  }
+  .hero-lede{
+    font-size:1.05rem;
+    max-width:34rem;
+    opacity:0.85;
+    line-height:1.6;
+  }
+  .hero-tags{
+    display:flex;flex-wrap:wrap;gap:0.5rem;
+    margin-top:1.75rem;
+  }
+  .hero-tag{
+    font-size:0.78rem;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:0.35rem 0.85rem;
+    color:var(--ink);
+    opacity:0.75;
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:5.5rem 0;}
+  .section-head{margin-bottom:3rem;}
+  .rule{
+    width:44px;height:2px;background:var(--brass);
+    margin:0.9rem 0 1.1rem;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .about p.lead-copy{
+    font-size:1.25rem;
+    font-family:'Fraunces', serif;
+    font-weight:400;
+    line-height:1.5;
+    color:var(--ink);
+  }
+
+  /* ---------- PARTY TYPES ---------- */
+  .type-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:1.9rem 1.7rem;
+    height:100%;
+    position:relative;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .type-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px -26px rgba(27,43,34,0.4);
+  }
+  .type-card .glyph{
+    width:38px;height:38px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:1.1rem;
+    color:var(--plum);
+  }
+  .type-card h3{
+    font-size:1.15rem;
+    margin-bottom:0.5rem;
+  }
+  .type-card p{
+    font-size:0.92rem;
+    opacity:0.78;
+    margin-bottom:0;
+  }
+
+  /* ---------- DECOR / SWATCH FAN (signature) ---------- */
+  .decor{
+    background:var(--ink);
+    color:var(--cream);
+  }
+  .decor .eyebrow{color:var(--rose);}
+  .decor h2{color:var(--cream);}
+  .decor .section-lede{color:rgba(243,237,228,0.72);max-width:34rem;}
+
+  .swatch-fan{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+    margin-top:2.5rem;
+  }
+  .swatch{
+    flex:1 1 150px;
+    max-width:190px;
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:3px;
+    padding:1.1rem 1.1rem 1rem;
+    transform:rotate(var(--r,0deg));
+    transition:transform .3s ease, box-shadow .3s ease;
+    box-shadow:0 14px 24px -16px rgba(0,0,0,0.5);
+    cursor:default;
+  }
+  .swatch:hover{
+    transform:rotate(0deg) translateY(-6px) scale(1.03);
+    box-shadow:0 26px 40px -18px rgba(0,0,0,0.55);
+    z-index:3;
+  }
+  .swatch .chip{
+    width:100%;height:52px;
+    border-radius:2px;
+    margin-bottom:0.85rem;
+  }
+  .swatch .hand{
+    font-size:1.35rem;
+    line-height:1;
+    display:block;
+  }
+  .swatch small{
+    display:block;
+    font-size:0.75rem;
+    opacity:0.65;
+    margin-top:0.3rem;
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process-row{
+    display:flex;
+    gap:1.5rem;
+    padding:1.6rem 0;
+    border-top:1px solid var(--line);
+  }
+  .process-row:last-of-type{border-bottom:1px solid var(--line);}
+  .process-num{
+    font-family:'Fraunces', serif;
+    font-size:1.4rem;
+    color:var(--brass);
+    width:2.6rem;
+    flex-shrink:0;
+  }
+  .process-row h3{
+    font-size:1.08rem;
+    margin-bottom:0.3rem;
+  }
+  .process-row p{
+    font-size:0.92rem;
+    opacity:0.78;
+    margin-bottom:0;
+    max-width:38rem;
+  }
+
+  /* ---------- DIRECTORY ---------- */
+  .directory{
+    background:var(--paper);
+    border-top:1px solid var(--line);
+  }
+  .directory .section-head p{max-width:36rem;opacity:0.75;}
+  .dir-list{
+    list-style:none;
+    padding:0;margin:0;
+    border-top:1px solid var(--line);
+  }
+  .dir-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1rem;
+    padding:1.05rem 0;
+    border-bottom:1px solid var(--line);
+    flex-wrap:wrap;
+  }
+  .dir-item .dname{
+    font-family:'Fraunces', serif;
+    font-size:1.05rem;
+  }
+  .dir-item .dnote{
+    font-size:0.85rem;
+    opacity:0.65;
+    text-align:right;
+    flex:1;
+    min-width:200px;
+  }
+  .dir-note-foot{
+    font-size:0.8rem;
+    opacity:0.6;
+    margin-top:1.25rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--cream);
+    padding:3rem 0 2rem;
+  }
+  footer .brand-mark{background:var(--brass);color:var(--ink);}
+  footer .foot-tag{
+    opacity:0.65;font-size:0.85rem;max-width:26rem;
+  }
+  footer .service-area{
+    font-size:0.8rem;
+    opacity:0.55;
+    margin-top:1.25rem;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--brass);
+    outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg nav-wrap sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand" href="#top">
+      <span class="brand-mark">A</span>
+      A Charleston Party
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <div class="navbar-nav">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#types">Party Types</a>
+        <a class="nav-link" href="#decor">Decor &amp; Design</a>
+        <a class="nav-link" href="#process">How It Works</a>
+        <a class="nav-link" href="#directory">Directory</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <p class="eyebrow mb-0">Charleston, South Carolina</p>
+        <h1>The invitation is just the beginning.</h1>
+        <p class="hero-lede mt-3">A Charleston Party plans and styles celebrations across the Lowcountry — the mood board, the vendors, the timeline, and every detail of decor in between. You host. We handle the rest.</p>
+        <div class="hero-tags">
+          <span class="hero-tag">Birthdays</span>
+          <span class="hero-tag">Showers &amp; Engagements</span>
+          <span class="hero-tag">Holiday Gatherings</span>
+          <span class="hero-tag">Corporate Socials</span>
+          <span class="hero-tag">Milestone Celebrations</span>
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1">
+        <div class="invite-card">
+          <span class="seal">CHS</span>
+          <p class="eyebrow mb-1" style="color:var(--plum);">You're Invited To Plan</p>
+          <p class="hand" style="font-size:1.7rem;line-height:1.15;margin-bottom:0.6rem;">An evening of florals, string lights, and a run-of-show that actually runs on time.</p>
+          <p class="mb-0" style="font-size:0.9rem;opacity:0.75;">Design concept, vendor list, and day-of styling — planned around your guest count, your budget, and your version of a good party.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-4">
+        <p class="eyebrow mb-0">About</p>
+        <h2 class="mt-2">A planner who sweats the details so you don't</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="col-lg-7 offset-lg-1">
+        <p class="lead-copy">Every party has a hundred small decisions hiding inside it — the linen color, the arrival time for the florist, where the cake table goes when the wind picks up. That's the part we take off your plate.</p>
+        <p class="mt-4" style="opacity:0.82;">A Charleston Party works across the peninsula, Mount Pleasant, West Ashley, James Island, and Daniel Island, planning and styling private parties, showers, and small-to-mid-size gatherings. We build the concept, coordinate the vendors, and show up on the day to style the space and manage the run-of-show — so the only job left for the host is to enjoy the party.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="types">
+  <div class="container">
+    <div class="section-head row">
+      <div class="col-lg-7">
+        <p class="eyebrow mb-0">Party Types</p>
+        <h2 class="mt-2">Parties we plan</h2>
+        <div class="rule"></div>
+        <p style="opacity:0.75;max-width:34rem;">Every event gets a concept built around who it's for — not a package pulled off a shelf.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="type-card">
+          <div class="glyph">🎂</div>
+          <h3>Birthday Parties</h3>
+          <p>From a first birthday to a milestone 50th — themed, scaled, and styled for the guest of honor.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="type-card">
+          <div class="glyph">🌸</div>
+          <h3>Bridal &amp; Baby Showers</h3>
+          <p>Tablescapes, florals, and a guest list flow that keeps the honoree at the center of the room.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="type-card">
+          <div class="glyph">💍</div>
+          <h3>Engagement Parties</h3>
+          <p>A first celebration for two families and two friend groups meeting in one room, styled to feel easy.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="type-card">
+          <div class="glyph">🎄</div>
+          <h3>Holiday Gatherings</h3>
+          <p>Seasonal decor and a guest experience that doesn't require the host to disappear into the kitchen.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="type-card">
+          <div class="glyph">🥂</div>
+          <h3>Milestone Anniversaries</h3>
+          <p>Vow renewals, 25ths, and 50ths — celebrations with history built into the design.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="type-card">
+          <div class="glyph">🏢</div>
+          <h3>Corporate Socials</h3>
+          <p>Holiday parties, launch events, and team celebrations that still feel like a party, not a meeting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="decor" id="decor">
+  <div class="container">
+    <div class="section-head row">
+      <div class="col-lg-7">
+        <p class="eyebrow mb-0">Decor &amp; Design</p>
+        <h2 class="mt-2">The palette, before the party</h2>
+        <div class="rule"></div>
+        <p class="section-lede">Decor decisions get made early — as a set of swatches and materials, not a mood board full of guesses. Here's what's on the table for most events.</p>
+      </div>
+    </div>
+
+    <div class="swatch-fan">
+      <div class="swatch" style="--r:-3deg;">
+        <div class="chip" style="background:linear-gradient(135deg,#C98A93,#B08D3E);"></div>
+        <span class="hand">Florals &amp; Greenery</span>
+        <small>Garlands, centerpieces, arch installs</small>
+      </div>
+      <div class="swatch" style="--r:2deg;">
+        <div class="chip" style="background:linear-gradient(135deg,#F3EDE4,#B08D3E);"></div>
+        <span class="hand">Tablescapes &amp; Linens</span>
+        <small>Runners, place settings, chargers</small>
+      </div>
+      <div class="swatch" style="--r:-1.5deg;">
+        <div class="chip" style="background:linear-gradient(135deg,#4B1E3D,#B08D3E);"></div>
+        <span class="hand">Lighting &amp; Ambiance</span>
+        <small>String lights, candles, uplighting</small>
+      </div>
+      <div class="swatch" style="--r:2.5deg;">
+        <div class="chip" style="background:linear-gradient(135deg,#C98A93,#4B1E3D);"></div>
+        <span class="hand">Balloons &amp; Backdrops</span>
+        <small>Installs, photo moments, arches</small>
+      </div>
+      <div class="swatch" style="--r:-2deg;">
+        <div class="chip" style="background:linear-gradient(135deg,#B08D3E,#1B2B22);"></div>
+        <span class="hand">Signage &amp; Favors</span>
+        <small>Welcome signs, menus, take-homes</small>
+      </div>
+      <div class="swatch" style="--r:1.5deg;">
+        <div class="chip" style="background:linear-gradient(135deg,#1B2B22,#C98A93);"></div>
+        <span class="hand">Rentals &amp; Furniture</span>
+        <small>Lounge seating, tents, bars</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head row">
+      <div class="col-lg-7">
+        <p class="eyebrow mb-0">How It Works</p>
+        <h2 class="mt-2">From first idea to last guest</h2>
+        <div class="rule"></div>
+      </div>
+    </div>
+
+    <div class="process-list">
+      <div class="process-row">
+        <div class="process-num">01</div>
+        <div>
+          <h3>Consultation</h3>
+          <p>A conversation about the occasion, the guest list, the space, and a realistic budget range.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">02</div>
+        <div>
+          <h3>Concept &amp; mood board</h3>
+          <p>Palette, theme, and decor direction, pulled together into one board before anything gets booked.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">03</div>
+        <div>
+          <h3>Vendor coordination</h3>
+          <p>Florists, rentals, catering, and entertainment sourced, booked, and confirmed on your behalf.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">04</div>
+        <div>
+          <h3>Timeline &amp; logistics</h3>
+          <p>A run-of-show that maps out load-in, setup, and the party itself, so nothing collides.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">05</div>
+        <div>
+          <h3>Day-of setup &amp; styling</h3>
+          <p>Decor installed and styled, room set, and details checked before the first guest arrives.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">06</div>
+        <div>
+          <h3>Send-off</h3>
+          <p>Breakdown handled at the end of the night — nothing left for the host to clean up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="directory" id="directory">
+  <div class="container">
+    <div class="section-head row">
+      <div class="col-lg-7">
+        <p class="eyebrow mb-0">Directory</p>
+        <h2 class="mt-2">Other Charleston party planners</h2>
+        <div class="rule"></div>
+        <p>Every planner has a different specialty and style. If you're comparing options around Charleston, a few other local names worth a look:</p>
+      </div>
+    </div>
+
+    <ul class="dir-list">
+      <li class="dir-item">
+        <span class="dname">Calder Clark</span>
+        <span class="dnote">Full-service event design known for Southern-flair weddings and luxury social events</span>
+      </li>
+      <li class="dir-item">
+        <span class="dname">Hill &amp; Co Creative</span>
+        <span class="dnote">Charleston-based event design and planning studio</span>
+      </li>
+      <li class="dir-item">
+        <span class="dname">Haley Kelly Events</span>
+        <span class="dnote">Full-service planning company for weddings and custom celebrations</span>
+      </li>
+      <li class="dir-item">
+        <span class="dname">JMC Charleston</span>
+        <span class="dnote">Event production and destination management for corporate and social events</span>
+      </li>
+      <li class="dir-item">
+        <span class="dname">Intrigue Charleston</span>
+        <span class="dnote">Event planning and design combining creative concepts with logistics</span>
+      </li>
+      <li class="dir-item">
+        <span class="dname">Absolutely Charleston</span>
+        <span class="dnote">Curated event planning with local artists, musicians, and culinary partners</span>
+      </li>
+      <li class="dir-item">
+        <span class="dname">MI Services Charleston</span>
+        <span class="dnote">Birthday parties, showers, and fundraiser event planning</span>
+      </li>
+      <li class="dir-item">
+        <span class="dname">Adrienne &amp; Co. Ltd. Luxury Events</span>
+        <span class="dnote">Event design covering florals, lighting, linens, and full decor</span>
+      </li>
+    </ul>
+    <p class="dir-note-foot">Listed for reference — A Charleston Party is not affiliated with the businesses above.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="d-flex align-items-center gap-2 mb-3">
+      <span class="brand-mark">A</span>
+      <span style="font-family:'Fraunces',serif;font-size:1.05rem;">A Charleston Party</span>
+    </div>
+    <p class="foot-tag">Party planning and decor design for celebrations across Charleston, South Carolina.</p>
+    <p class="service-area">Serving the Charleston peninsula, Mount Pleasant, West Ashley, James Island &amp; Daniel Island.</p>
+    <p class="service-area">&copy; <span id="year"></span> A Charleston Party. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

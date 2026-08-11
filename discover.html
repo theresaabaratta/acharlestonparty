@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discover Charleston | A Charleston Party</title>
+<meta name="description" content="Why Charleston, SC keeps topping best-city lists — and why its history, energy, and year-round festival calendar make it one of the best places in the country to throw a party.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Work+Sans:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1B2B22;
+    --cream:#F3EDE4;
+    --paper:#FBF8F3;
+    --brass:#B08D3E;
+    --rose:#C98A93;
+    --plum:#4B1E3D;
+    --line: rgba(27,43,34,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.display-font{
+    font-family:'Fraunces', serif;
+    font-weight:450;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+
+  .hand{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+  }
+
+  .eyebrow{
+    font-family:'Work Sans', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.16em;
+    font-size:0.72rem;
+    font-weight:600;
+    color:var(--brass);
+  }
+
+  a{color:inherit;}
+
+  /* ---------- NAV ---------- */
+  .nav-wrap{
+    background:rgba(243,237,228,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand-mark{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--plum);
+    display:inline-flex;align-items:center;justify-content:center;
+    color:var(--cream);font-family:'Fraunces',serif;font-size:1rem;
+    flex-shrink:0;
+  }
+  .navbar-brand{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    letter-spacing:-0.01em;
+    color:var(--ink) !important;
+    display:flex;align-items:center;gap:0.6rem;
+  }
+  .nav-link{
+    font-size:0.9rem;
+    color:var(--ink) !important;
+    opacity:0.75;
+    padding:0.4rem 0.9rem !important;
+  }
+  .nav-link:hover, .nav-link.active{opacity:1;}
+
+  section{padding:5.5rem 0;}
+  .section-head{margin-bottom:3rem;}
+  .rule{
+    width:44px;height:2px;background:var(--brass);
+    margin:0.9rem 0 1.1rem;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:6rem 0 5rem;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 85% -10%, rgba(176,141,62,0.16), transparent 55%),
+      radial-gradient(ellipse at -5% 110%, rgba(75,30,61,0.10), transparent 50%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{margin-bottom:0.6rem;}
+  .hero h1{
+    font-size:clamp(2.2rem, 4vw, 3.3rem);
+    line-height:1.08;
+    max-width:20ch;
+  }
+  .hero-lede{
+    font-size:1.05rem;
+    max-width:38rem;
+    opacity:0.82;
+    line-height:1.65;
+    margin-top:1.4rem;
+  }
+
+  /* ---------- STAT STRIP ---------- */
+  .accolades{background:var(--paper);border-bottom:1px solid var(--line);}
+  .stat-card{
+    border:1px solid var(--line);
+    background:var(--cream);
+    padding:1.8rem 1.6rem;
+    height:100%;
+  }
+  .stat-num{
+    font-family:'Fraunces', serif;
+    font-size:2.1rem;
+    color:var(--plum);
+    line-height:1;
+    margin-bottom:0.6rem;
+  }
+  .stat-card p{
+    font-size:0.9rem;
+    opacity:0.78;
+    margin-bottom:0;
+  }
+
+  /* ---------- CELEBRATION SECTION ---------- */
+  .celebration{background:var(--ink);color:var(--cream);}
+  .celebration .eyebrow{color:var(--rose);}
+  .celebration h2{color:var(--cream);}
+  .celebration .lede{color:rgba(243,237,228,0.72);max-width:36rem;}
+
+  .fest-list{
+    margin-top:2.5rem;
+    border-top:1px solid rgba(243,237,228,0.18);
+  }
+  .fest-row{
+    display:flex;
+    justify-content:space-between;
+    gap:1.5rem;
+    padding:1.4rem 0;
+    border-bottom:1px solid rgba(243,237,228,0.18);
+    flex-wrap:wrap;
+  }
+  .fest-row .fname{
+    font-family:'Fraunces', serif;
+    font-size:1.1rem;
+    min-width:220px;
+  }
+  .fest-row .fwhen{
+    font-family:'Work Sans', sans-serif;
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--brass);
+    align-self:center;
+  }
+  .fest-row p{
+    font-size:0.92rem;
+    opacity:0.72;
+    max-width:32rem;
+    margin:0.3rem 0 0;
+  }
+
+  /* ---------- NEIGHBORHOODS ---------- */
+  .nbhd-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:1.9rem 1.7rem;
+    height:100%;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .nbhd-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px -26px rgba(27,43,34,0.4);
+  }
+  .nbhd-card .hand{
+    font-size:1.5rem;
+    color:var(--plum);
+    display:block;
+    line-height:1;
+    margin-bottom:0.7rem;
+  }
+  .nbhd-card h3{
+    font-size:1.1rem;
+    margin-bottom:0.5rem;
+  }
+  .nbhd-card p{
+    font-size:0.92rem;
+    opacity:0.78;
+    margin-bottom:0;
+  }
+
+  /* ---------- CLOSE ---------- */
+  .close-band{
+    background:var(--paper);
+    border-top:1px solid var(--line);
+    text-align:center;
+  }
+  .close-band h2{
+    max-width:26ch;
+    margin:0 auto;
+  }
+  .close-band p{
+    max-width:34rem;
+    margin:1rem auto 0;
+    opacity:0.78;
+  }
+  .btn-quiet{
+    display:inline-block;
+    margin-top:1.75rem;
+    padding:0.75rem 1.7rem;
+    border:1px solid var(--ink);
+    border-radius:999px;
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    text-decoration:none;
+    color:var(--ink);
+    transition:background .2s ease, color .2s ease;
+  }
+  .btn-quiet:hover{background:var(--ink);color:var(--cream);}
+
+  footer{
+    background:var(--ink);
+    color:var(--cream);
+    padding:3rem 0 2rem;
+  }
+  footer .brand-mark{background:var(--brass);color:var(--ink);}
+  footer .foot-tag{opacity:0.65;font-size:0.85rem;max-width:26rem;}
+  footer .service-area{font-size:0.8rem;opacity:0.55;margin-top:1.25rem;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
+  }
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--brass);
+    outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg nav-wrap sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-mark">A</span>
+      A Charleston Party
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <div class="navbar-nav">
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#types">Party Types</a>
+        <a class="nav-link" href="index.html#decor">Decor &amp; Design</a>
+        <a class="nav-link" href="index.html#process">How It Works</a>
+        <a class="nav-link active" href="discover-charleston.html">Discover Charleston</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <p class="eyebrow">Discover Charleston</p>
+    <h1>A city that keeps giving people a reason to gather</h1>
+    <p class="hero-lede">Charleston has been drawing visitors back to the same cobblestone streets and harbor views for three centuries, and it hasn't slowed down. Long before it's a party backdrop, it's a genuinely great American city — which is exactly why it makes such a good one.</p>
+  </div>
+</header>
+
+<section class="accolades">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow mb-0">Why Everyone's Talking About It</p>
+      <h2 class="mt-2">A city that's hard to stop ranking first</h2>
+      <div class="rule"></div>
+      <p style="opacity:0.75;max-width:36rem;">Charleston shows up near the top of nearly every "best of" travel list published each year, and has for a long time.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="stat-card">
+          <div class="stat-num">14 of 15</div>
+          <p>Years Charleston has been voted the top U.S. city by Condé Nast Traveler readers, most recently in 2025.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat-card">
+          <div class="stat-num">9 years</div>
+          <p>Straight that Southern Living readers have named Charleston the South's best city, through 2025.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat-card">
+          <div class="stat-num">12 + years</div>
+          <p>Charleston spent as America's top-ranked city in Travel + Leisure's World's Best Awards before settling into the No. 2 spot in 2026.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="celebration">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow mb-0">A City Built for Celebration</p>
+      <h2 class="mt-2">Charleston doesn't wait for an occasion</h2>
+      <div class="rule" style="background:var(--rose);"></div>
+      <p class="lede">Between the rooftop bars over the harbor, the string-lit piazzas downtown, and a festival calendar that barely takes a month off, this is a city that already knows how to throw a party. A few fixtures on the yearly calendar:</p>
+    </div>
+
+    <div class="fest-list">
+      <div class="fest-row">
+        <span class="fname">Charleston Wine + Food</span>
+        <span class="fwhen">March</span>
+        <p>A citywide food and drink festival that turns downtown into a five-day tasting event.</p>
+      </div>
+      <div class="fest-row">
+        <span class="fname">Spoleto Festival USA</span>
+        <span class="fwhen">May – June</span>
+        <p>Seventeen days of opera, dance, theater, and music staged across the historic district.</p>
+      </div>
+      <div class="fest-row">
+        <span class="fname">Southeastern Wildlife Expo</span>
+        <span class="fwhen">February</span>
+        <p>Art, outdoor culture, and a party atmosphere that spills across Marion Square and King Street.</p>
+      </div>
+      <div class="fest-row">
+        <span class="fname">Holiday Parade of Boats &amp; Tree Lightings</span>
+        <span class="fwhen">November – December</span>
+        <p>The harbor and historic squares turn into a season-long backdrop for holiday gatherings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="neighborhoods">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow mb-0">Where To Look</p>
+      <h2 class="mt-2">Neighborhoods worth knowing</h2>
+      <div class="rule"></div>
+      <p style="opacity:0.75;max-width:36rem;">Every part of the city has its own personality — and its own reason people end up celebrating there.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="nbhd-card">
+          <span class="hand">01</span>
+          <h3>French Quarter</h3>
+          <p>Gas-lit streets, courtyard gardens, and some of the most requested engagement-photo corners in the city.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="nbhd-card">
+          <span class="hand">02</span>
+          <h3>King Street</h3>
+          <p>Three districts of restaurants, rooftop bars, and boutiques that carry the city's nightlife after dark.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="nbhd-card">
+          <span class="hand">03</span>
+          <h3>The Battery &amp; Rainbow Row</h3>
+          <p>Pastel antebellum homes and harbor views that have anchored Charleston's postcard image for generations.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="nbhd-card">
+          <span class="hand">04</span>
+          <h3>Shem Creek</h3>
+          <p>A working shrimp dock turned waterfront restaurant row in Mount Pleasant, best at sunset.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="nbhd-card">
+          <span class="hand">05</span>
+          <h3>Daniel Island</h3>
+          <p>A newer, quieter district with parks and event lawns that suit larger private gatherings.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="nbhd-card">
+          <span class="hand">06</span>
+          <h3>Upper Peninsula</h3>
+          <p>Former warehouses turned breweries and event spaces, the city's fastest-growing party scene.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close-band">
+  <div class="container">
+    <p class="eyebrow mb-0" style="text-align:center;">However You Discover It</p>
+    <h2 class="mt-2">A city this good at hosting deserves a party to match</h2>
+    <p>Wherever the celebration lands — a rooftop on King Street or a garden in the French Quarter — Charleston already does most of the work. We handle the rest.</p>
+    <a class="btn-quiet" href="index.html#types">See Party Types We Plan</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="d-flex align-items-center gap-2 mb-3">
+      <span class="brand-mark">A</span>
+      <span style="font-family:'Fraunces',serif;font-size:1.05rem;">A Charleston Party</span>
+    </div>
+    <p class="foot-tag">Party planning and decor design for celebrations across Charleston, South Carolina.</p>
+    <p class="service-area">Serving the Charleston peninsula, Mount Pleasant, West Ashley, James Island &amp; Daniel Island.</p>
+    <p class="service-area">&copy; <span id="year"></span> A Charleston Party. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Experience | A Charleston Party</title>
+<meta name="description" content="How booking a Charleston party with A Charleston Party works — experience tiers, the planning process from first call to day-of, and what to have ready.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Work+Sans:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1B2B22;
+    --cream:#F3EDE4;
+    --paper:#FBF8F3;
+    --brass:#B08D3E;
+    --rose:#C98A93;
+    --plum:#4B1E3D;
+    --line: rgba(27,43,34,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:450;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .hand{font-family:'Caveat', cursive;font-weight:700;}
+  .eyebrow{
+    font-family:'Work Sans', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.16em;
+    font-size:0.72rem;
+    font-weight:600;
+    color:var(--brass);
+  }
+  a{color:inherit;}
+
+  /* NAV */
+  .nav-wrap{
+    background:rgba(243,237,228,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand-mark{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--plum);
+    display:inline-flex;align-items:center;justify-content:center;
+    color:var(--cream);font-family:'Fraunces',serif;font-size:1rem;
+    flex-shrink:0;
+  }
+  .navbar-brand{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    letter-spacing:-0.01em;
+    color:var(--ink) !important;
+    display:flex;align-items:center;gap:0.6rem;
+  }
+  .nav-link{
+    font-size:0.9rem;
+    color:var(--ink) !important;
+    opacity:0.75;
+    padding:0.4rem 0.9rem !important;
+  }
+  .nav-link:hover, .nav-link.active{opacity:1;}
+
+  section{padding:5.5rem 0;}
+  .section-head{margin-bottom:3rem;}
+  .rule{width:44px;height:2px;background:var(--brass);margin:0.9rem 0 1.1rem;}
+
+  /* HERO */
+  .hero{
+    padding:6rem 0 4.5rem;
+    background:
+      radial-gradient(ellipse at 85% -10%, rgba(176,141,62,0.16), transparent 55%),
+      radial-gradient(ellipse at -5% 110%, rgba(75,30,61,0.10), transparent 50%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero h1{
+    font-size:clamp(2.2rem, 4vw, 3.2rem);
+    line-height:1.08;
+    max-width:19ch;
+  }
+  .hero p{
+    font-size:1.05rem;
+    max-width:36rem;
+    opacity:0.82;
+    line-height:1.65;
+    margin-top:1.3rem;
+  }
+
+  /* TIERS */
+  .tiers{background:var(--paper);border-bottom:1px solid var(--line);}
+  .tier-card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:2rem 1.8rem;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+  .tier-card.is-featured{
+    border-color:var(--plum);
+    box-shadow:0 20px 40px -26px rgba(75,30,61,0.4);
+  }
+  .tier-flag{
+    position:absolute;
+    top:-1px;right:1.6rem;
+    background:var(--plum);
+    color:var(--cream);
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    padding:0.3rem 0.7rem;
+  }
+  .tier-card .eyebrow{margin-bottom:0.3rem;}
+  .tier-card h3{font-size:1.3rem;margin-bottom:0.6rem;}
+  .tier-card p.tier-desc{font-size:0.92rem;opacity:0.78;margin-bottom:1.2rem;}
+  .tier-card ul{
+    list-style:none;padding:0;margin:0 0 0.5rem;
+    font-size:0.9rem;
+  }
+  .tier-card li{
+    padding:0.55rem 0;
+    border-top:1px solid var(--line);
+    display:flex;
+    gap:0.6rem;
+  }
+  .tier-card li::before{
+    content:"—";
+    color:var(--brass);
+    flex-shrink:0;
+  }
+
+  /* PROCESS */
+  .process-row{
+    display:flex;
+    gap:1.5rem;
+    padding:1.6rem 0;
+    border-top:1px solid var(--line);
+  }
+  .process-row:last-of-type{border-bottom:1px solid var(--line);}
+  .process-num{
+    font-family:'Fraunces', serif;
+    font-size:1.4rem;
+    color:var(--brass);
+    width:2.6rem;
+    flex-shrink:0;
+  }
+  .process-row h3{font-size:1.08rem;margin-bottom:0.3rem;}
+  .process-row p{font-size:0.92rem;opacity:0.78;margin-bottom:0;max-width:38rem;}
+
+  /* READY LIST */
+  .ready{background:var(--ink);color:var(--cream);}
+  .ready .eyebrow{color:var(--rose);}
+  .ready h2{color:var(--cream);}
+  .ready-grid{margin-top:2rem;}
+  .ready-item{
+    border:1px solid rgba(243,237,228,0.18);
+    padding:1.5rem 1.4rem;
+    height:100%;
+  }
+  .ready-item .hand{font-size:1.3rem;color:var(--rose);display:block;margin-bottom:0.5rem;}
+  .ready-item h3{color:var(--cream);font-size:1.02rem;margin-bottom:0.4rem;}
+  .ready-item p{font-size:0.88rem;opacity:0.68;margin-bottom:0;}
+
+  /* CLOSE */
+  .close-band{background:var(--paper);border-top:1px solid var(--line);text-align:center;}
+  .close-band h2{max-width:26ch;margin:0 auto;}
+  .close-band p{max-width:32rem;margin:1rem auto 0;opacity:0.78;}
+  .btn-quiet{
+    display:inline-block;
+    margin-top:1.75rem;
+    padding:0.75rem 1.7rem;
+    border:1px solid var(--ink);
+    border-radius:999px;
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    text-decoration:none;
+    color:var(--ink);
+    transition:background .2s ease, color .2s ease;
+  }
+  .btn-quiet:hover{background:var(--ink);color:var(--cream);}
+  .season-note{font-size:0.8rem;opacity:0.6;margin-top:1rem;}
+
+  footer{background:var(--ink);color:var(--cream);padding:3rem 0 2rem;}
+  footer .brand-mark{background:var(--brass);color:var(--ink);}
+  footer .foot-tag{opacity:0.65;font-size:0.85rem;max-width:26rem;}
+  footer .service-area{font-size:0.8rem;opacity:0.55;margin-top:1.25rem;}
+
+  @media (prefers-reduced-motion: reduce){*{transition:none !important; scroll-behavior:auto !important;}}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg nav-wrap sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-mark">A</span>
+      A Charleston Party
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <div class="navbar-nav">
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="index.html#types">Party Types</a>
+        <a class="nav-link" href="index.html#decor">Decor &amp; Design</a>
+        <a class="nav-link" href="discover-charleston.html">Discover Charleston</a>
+        <a class="nav-link active" href="book.html">Book Your Experience</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <p class="eyebrow">Book Your Experience</p>
+    <h1>Start with a date and a vision. We'll build the rest.</h1>
+    <p>Every booking begins the same way — a conversation about what you're celebrating. From there, we scope the right level of planning for your event and take it from concept to clean-up.</p>
+  </div>
+</header>
+
+<section class="tiers">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow mb-0">Experience Tiers</p>
+      <h2 class="mt-2">Three ways to work with us</h2>
+      <div class="rule"></div>
+      <p style="opacity:0.75;max-width:36rem;">Most parties fit one of these three shapes — we'll help you find the right one during your first call.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="tier-card">
+          <p class="eyebrow">Tier One</p>
+          <h3>Day-Of Styling</h3>
+          <p class="tier-desc">You've handled the planning — we bring the styling eye and the extra hands for the day itself.</p>
+          <ul>
+            <li>Decor setup &amp; styling on-site</li>
+            <li>Vendor arrival coordination</li>
+            <li>Run-of-show management</li>
+            <li>End-of-night breakdown</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="tier-card is-featured">
+          <span class="tier-flag">Most Booked</span>
+          <p class="eyebrow">Tier Two</p>
+          <h3>Full Celebration</h3>
+          <p class="tier-desc">Concept through clean-up — the complete planning and design experience for one event.</p>
+          <ul>
+            <li>Concept &amp; mood board</li>
+            <li>Vendor sourcing &amp; booking</li>
+            <li>Timeline &amp; logistics</li>
+            <li>Day-of styling &amp; management</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="tier-card">
+          <p class="eyebrow">Tier Three</p>
+          <h3>Design Consultation</h3>
+          <p class="tier-desc">A single working session to build your palette, decor direction, and a vendor shortlist you can run with.</p>
+          <ul>
+            <li>One planning session</li>
+            <li>Custom mood board</li>
+            <li>Curated vendor recommendations</li>
+            <li>Decor shopping list</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow mb-0">How Booking Works</p>
+      <h2 class="mt-2">From first call to confirmed date</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="process-list">
+      <div class="process-row">
+        <div class="process-num">01</div>
+        <div>
+          <h3>Discovery call</h3>
+          <p>A short conversation about the occasion, the date, the guest count, and a realistic budget range.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">02</div>
+        <div>
+          <h3>Proposal &amp; scope</h3>
+          <p>A written proposal outlining the right tier, what's included, and a timeline for the planning ahead.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">03</div>
+        <div>
+          <h3>Booking confirmation</h3>
+          <p>Once the scope is approved, your date is held and planning officially begins.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">04</div>
+        <div>
+          <h3>Planning kickoff</h3>
+          <p>Mood board, vendor shortlist, and a planning calendar so you always know what's next.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ready">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow mb-0">Before You Book</p>
+      <h2 class="mt-2">What to have ready</h2>
+      <div class="rule" style="background:var(--rose);"></div>
+    </div>
+
+    <div class="row g-4 ready-grid">
+      <div class="col-md-6 col-lg-3">
+        <div class="ready-item">
+          <span class="hand">01</span>
+          <h3>A date or a window</h3>
+          <p>An exact date if you have one, or a season and a few options if you don't.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="ready-item">
+          <span class="hand">02</span>
+          <h3>Rough guest count</h3>
+          <p>Even a range helps shape the venue, rentals, and decor scale.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="ready-item">
+          <span class="hand">03</span>
+          <h3>A budget range</h3>
+          <p>The single biggest factor in matching you to the right tier and vendor list.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="ready-item">
+          <span class="hand">04</span>
+          <h3>Any inspiration</h3>
+          <p>Colors, photos, or a feeling you're chasing — nothing needs to be finalized yet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close-band">
+  <div class="container">
+    <p class="eyebrow mb-0" style="text-align:center;">Ready When You Are</p>
+    <h2 class="mt-2">Popular dates fill up fast during peak season</h2>
+    <p>Spring and early fall book quickest across Charleston. Explore the decor styles and party types we plan while you settle on a date.</p>
+    <a class="btn-quiet" href="index.html#decor">Explore Decor &amp; Design</a>
+    <p class="season-note">Peak booking months: March–June and September–November.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="d-flex align-items-center gap-2 mb-3">
+      <span class="brand-mark">A</span>
+      <span style="font-family:'Fraunces',serif;font-size:1.05rem;">A Charleston Party</span>
+    </div>
+    <p class="foot-tag">Party planning and decor design for celebrations across Charleston, South Carolina.</p>
+    <p class="service-area">Serving the Charleston peninsula, Mount Pleasant, West Ashley, James Island &amp; Daniel Island.</p>
+    <p class="service-area">&copy; <span id="year"></span> A Charleston Party. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
